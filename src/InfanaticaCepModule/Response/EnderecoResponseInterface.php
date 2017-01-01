@@ -38,4 +38,8 @@ interface EnderecoResponseInterface{
 
     public function setUf($uf);
 
+    public function getIbge();
+
+    public function setIbge($uf);
+
 }

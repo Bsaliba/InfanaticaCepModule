@@ -16,6 +16,9 @@ class EnderecoResponse implements EnderecoResponseInterface{
     /** @var  string */
     protected $uf;
 
+    /** @var  string */
+    protected $ibge;
+    
 
     public function toArray()
     {
@@ -23,6 +26,7 @@ class EnderecoResponse implements EnderecoResponseInterface{
         $retorno['bairro']      = $this->getBairro();
         $retorno['localidade']  = $this->getLocalidade();
         $retorno['uf']          = $this->getUf();
+        $retorno['ibge']        = $this->getIbge();
         return $retorno;
     }
 
@@ -130,5 +134,21 @@ class EnderecoResponse implements EnderecoResponseInterface{
     public function setUf($uf)
     {
         $this->uf = $uf;
+    }
+
+    /**
+     * @return string
+     */
+    public function getIbge()
+    {
+        return $this->ibge;
+    }
+
+    /**
+     * @param string $ibge
+     */
+    public function setIbge($ibge)
+    {
+        $this->ibge = $ibge;
     }
 }

@@ -35,7 +35,7 @@ class ViaCepAdapter implements CepAdapterInterface {
         }
 
         $response = json_decode($response,true);
-
+        
         if(isset($response['erro']) && ($response['erro'] === true))
         {
             throw new CepNotFoundException();
@@ -61,6 +61,11 @@ class ViaCepAdapter implements CepAdapterInterface {
         if(isset($response['uf']) && !empty($response['uf']))
         {
             $enderecoResponse->setUf($response['uf']);
+        }
+        
+        if(isset($response['ibge']) && !empty($response['ibge']))
+        {
+            $enderecoResponse->setIbge($response['ibge']);
         }
 
         return $enderecoResponse;
